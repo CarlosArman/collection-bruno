@@ -5,13 +5,17 @@ meta {
 }
 
 get {
-  url: {{url}}/api/unknown/23
+  url: {{url}}/api/unknown/:id
   body: none
   auth: inherit
 }
 
+params:path {
+  id: 23
+}
+
 tests {
-  test("status code 404", function () {
+  test("Status code is 404", function () {
     expect(res.getStatus()).to.equal(404);
   });
    

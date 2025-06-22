@@ -1,0 +1,22 @@
+meta {
+  name: Delete
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{url}}/api/users/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 2
+}
+
+tests {
+  test("Status code is 204", function () {
+    expect(res.getStatus()).to.equal(204);
+  });
+   
+}

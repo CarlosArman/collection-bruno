@@ -1,0 +1,30 @@
+meta {
+  name: Register - unsuccessful
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{url}}/api/register
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "email": "sydney@fife"
+  }
+}
+
+tests {
+  test("Status code is 400", function () {
+    expect(res.getStatus()).to.equal(400);
+  });
+   
+  test("should return json", function () {
+    expect(res.getBody()).to.eql({
+      "error": "Missing password"
+    });
+  });
+  
+}
