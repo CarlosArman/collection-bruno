@@ -1,0 +1,18 @@
+meta {
+  name: Single <resource> not found
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}/api/unknown/23
+  body: none
+  auth: inherit
+}
+
+tests {
+  test("status code 404", function () {
+    expect(res.getStatus()).to.equal(404);
+  });
+   
+}

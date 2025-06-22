@@ -1,0 +1,22 @@
+meta {
+  name: List users
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/api/users?page=2
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 2
+}
+
+tests {
+  test("Status code is 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+   
+}

@@ -1,0 +1,12 @@
+auth {
+  mode: apikey
+}
+
+auth:apikey {
+  key: x-api-key
+  value: reqres-free-v1
+  placement: header
+}
+vars:pre-request {
+  url: https://reqres.in
+}

@@ -1,0 +1,25 @@
+meta {
+  name: Create
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{url}} /api/users
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "name": "morpheus",
+      "job": "leader"
+  }
+}
+
+tests {
+  test("Status code is 201", function () {
+    expect(res.getStatus()).to.equal(201);
+  });
+   
+}

@@ -1,0 +1,18 @@
+meta {
+  name: List <resource>
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{url}}/api/unknown
+  body: none
+  auth: inherit
+}
+
+tests {
+  test("Status code is 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+   
+}
