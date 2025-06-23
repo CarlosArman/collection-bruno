@@ -1,18 +1,18 @@
 meta {
-  name: Register - unsuccessful
+  name: Login - unsuccessful
   type: http
-  seq: 12
+  seq: 14
 }
 
 post {
-  url: {{url}}/api/register
+  url: {{url}}/api/login
   body: json
   auth: inherit
 }
 
 body:json {
   {
-      "email": "sydney@fife"
+    "email": "peter@klaven"
   }
 }
 
@@ -20,7 +20,7 @@ tests {
   test("Status code is 400", function () {
     expect(res.getStatus()).to.equal(400);
   });
-   
+  
   test("validate response", function () {
     expect(res.getBody()).to.eql({
       "error": "Missing password"

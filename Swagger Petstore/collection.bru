@@ -1,0 +1,12 @@
+auth {
+  mode: apikey
+}
+
+auth:apikey {
+  key: api_key
+  value: special-key
+  placement: header
+}
+vars:pre-request {
+  URL: https://petstore.swagger.io/v2
+}

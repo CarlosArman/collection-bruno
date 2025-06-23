@@ -1,0 +1,28 @@
+meta {
+  name: Delayed response
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{url}}/api/users?delay=3
+  body: none
+  auth: inherit
+}
+
+params:query {
+  delay: 3
+}
+
+tests {
+  test("Status code is 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Validate response time", function () {
+       expect(res.getResponseTime()).to.be.at.most(6600);
+  });
+  
+  
+  
+}

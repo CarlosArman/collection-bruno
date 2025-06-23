@@ -1,0 +1,22 @@
+meta {
+  name: Place an order for a pet
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{URL}}/store/order
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": 10,
+    "petId": 1,
+    "quantity": 1,
+    "shipDate": "2025-06-23T00:45:19.844Z",
+    "status": "placed",
+    "complete": true
+  }
+}

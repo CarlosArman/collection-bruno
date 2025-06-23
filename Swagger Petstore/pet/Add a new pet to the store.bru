@@ -1,0 +1,37 @@
+meta {
+  name: Add a new pet to the store
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{URL}}/pet
+  body: json
+  auth: inherit
+}
+
+headers {
+  ~accept: application/json
+  ~Content-Type: application/json
+}
+
+body:json {
+  {
+    "id": 0,
+    "category": {
+      "id": 0,
+      "name": "string"
+    },
+    "name": "doggie",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "available"
+  }
+}

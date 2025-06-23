@@ -1,0 +1,32 @@
+meta {
+  name: Update an existing pet
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{URL}}/pet
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": 0,
+    "category": {
+      "id": 0,
+      "name": "string"
+    },
+    "name": "doggie",
+    "photoUrls": [
+      "string"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "available"
+  }
+}

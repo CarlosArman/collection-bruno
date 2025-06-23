@@ -1,0 +1,17 @@
+meta {
+  name: Finds Pets by status
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{URL}}/pet/findByStatus?status=available
+  body: none
+  auth: inherit
+}
+
+params:query {
+  status: available
+  ~status: pending
+  ~status: sold
+}

@@ -1,0 +1,20 @@
+meta {
+  name: Updates a pet in the store with form data
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{URL}}/pet/:id?name=boby&status=true
+  body: none
+  auth: inherit
+}
+
+params:query {
+  name: boby
+  status: true
+}
+
+params:path {
+  id: 4
+}

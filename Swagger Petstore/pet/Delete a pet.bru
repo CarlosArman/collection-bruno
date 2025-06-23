@@ -1,0 +1,15 @@
+meta {
+  name: Delete a pet
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{URL}}/pet/:petId
+  body: none
+  auth: inherit
+}
+
+params:path {
+  petId: 10
+}
