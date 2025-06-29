@@ -1,0 +1,28 @@
+meta {
+  name: Update user
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{URL}}/user/:username
+  body: json
+  auth: inherit
+}
+
+params:path {
+  username: albaL
+}
+
+body:json {
+  {
+    "id": 7646059253331864000,
+    "username": "albaL",
+    "firstName": "Alejandra",
+    "lastName": "Ling Meng",
+    "email": "aleling@gmail.com",
+    "password": "1596375",
+    "phone": "951478523",
+    "userStatus": 0
+  }
+}

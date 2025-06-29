@@ -1,0 +1,15 @@
+meta {
+  name: Consultar libro x ISBN
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{URL}}/BookStore/v1/Book?ISBN=9781449325862
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ISBN: 9781449325862
+}
