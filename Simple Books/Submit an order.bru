@@ -1,0 +1,23 @@
+meta {
+  name: Submit an order
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{URL}}/orders
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "bookId": 1,
+    "customerName": "John"
+  }
+}
+
+script:post-response {
+  let orderId = res.getBody().orderId;
+  bru.setVar("orderId",orderId);
+}

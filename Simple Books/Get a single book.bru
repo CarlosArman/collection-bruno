@@ -1,0 +1,15 @@
+meta {
+  name: Get a single book
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{URL}}/books/:bookId
+  body: none
+  auth: inherit
+}
+
+params:path {
+  bookId: 1
+}

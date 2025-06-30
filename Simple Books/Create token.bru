@@ -1,0 +1,28 @@
+meta {
+  name: Create token
+  type: http
+  seq: 6
+}
+
+post {
+  url: https://simple-books-api.glitch.me/api-clients/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer d89a1e1046772dbed33fdb01eb3885856055c8c20e6aa8b7581f2d07bd68375a
+}
+
+body:json {
+  {
+      "clientName": "test26",
+      "clientEmail": "test26@example.com"
+  }
+}
+
+script:post-response {
+  let accessToken = res.getBody().accessToken;
+  bru.setVar("token",accessToken);
+}
