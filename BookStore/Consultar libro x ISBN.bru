@@ -5,11 +5,42 @@ meta {
 }
 
 get {
-  url: {{URL}}/BookStore/v1/Book?ISBN=9781449325862
+  url: {{URL}}/BookStore/v1/Book?ISBN={{isbn}}
   body: none
   auth: inherit
 }
 
 params:query {
-  ISBN: 9781449325862
+  ISBN: {{isbn}}
+}
+
+vars:pre-request {
+  isbn: 9781449325862
+}
+
+tests {
+  test("Status code is 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  
+  test("ISBN is 9781449325862", function () {
+    expect(res.body).to.have.property("isbn").that.equals("9781449325862");
+  });
+  
+  test("Response has correct keys and types", function () {
+    const body = res.body;
+  
+    expect(body).to.have.property("isbn").that.is.a("string");
+    expect(body).to.have.property("title").that.is.a("string");
+    expect(body).to.have.property("subTitle").that.is.a("string");
+    expect(body).to.have.property("author").that.is.a("string");
+    expect(body).to.have.property("publish_date").that.is.a("string");
+    expect(body).to.have.property("publisher").that.is.a("string");
+    expect(body).to.have.property("pages").that.is.a("number");
+    expect(body).to.have.property("description").that.is.a("string");
+    expect(body).to.have.property("website").that.is.a("string");
+  });
+  
+  
 }

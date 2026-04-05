@@ -5,26 +5,26 @@ meta {
 }
 
 put {
-  url: {{URL}}/pet
+  url: {{baseUrl}}/pet
   body: json
   auth: inherit
 }
 
 body:json {
   {
-    "id": 0,
+    "id": 101,
     "category": {
-      "id": 0,
-      "name": "string"
+      "id": 2,
+      "name": "Chihuahua"
     },
-    "name": "doggie",
+    "name": "bruno",
     "photoUrls": [
-      "string"
+      "https://www.infobae.com/resizer/v2/ERRFPX3NSFBNZLLZHXS56YU4C4.jpg?auth=6c2b0f6510364fb480856d63caa9abc7bfa384c166d7582aaa35892e04636f09&smart=true&width=350&height=196&quality=85"
     ],
     "tags": [
       {
-        "id": 0,
-        "name": "string"
+        "id": 1,
+        "name": "small,cute"
       }
     ],
     "status": "available"

@@ -5,7 +5,7 @@ meta {
 }
 
 post {
-  url: {{URL}}/pet
+  url: {{baseUrl}}/pet
   body: json
   auth: inherit
 }
@@ -17,10 +17,10 @@ headers {
 
 body:json {
   {
-    "id": 0,
+    "id": 101,
     "category": {
-      "id": 0,
-      "name": "string"
+      "id": 2,
+      "name": "Chihuahua"
     },
     "name": "doggie",
     "photoUrls": [
@@ -28,8 +28,8 @@ body:json {
     ],
     "tags": [
       {
-        "id": 0,
-        "name": "string"
+        "id": 1,
+        "name": "small"
       }
     ],
     "status": "available"
