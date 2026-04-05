@@ -4,7 +4,7 @@
 [![Download Bruno](https://img.shields.io/badge/Download-Bruno-111827?style=flat)](https://www.usebruno.com/downloads)
 [![Bruno CLI Docs](https://img.shields.io/badge/Bruno%20CLI-Docs-111827?style=flat)](https://docs.usebruno.com/bru-cli/installation#npm)
 
-[![License](https://img.shields.io/github/license/CarlosArman/collection-bruno?style=flat)](https://github.com/CarlosArman/collection-bruno/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/License-Educational%20Use-blue?style=flat)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/CarlosArman/collection-bruno?style=flat)](https://github.com/CarlosArman/collection-bruno/commits/main)
 [![Repo Size](https://img.shields.io/github/repo-size/CarlosArman/collection-bruno?style=flat)](https://github.com/CarlosArman/collection-bruno)
 [![Stars](https://img.shields.io/github/stars/CarlosArman/collection-bruno?style=flat)](https://github.com/CarlosArman/collection-bruno/stargazers)
@@ -448,10 +448,12 @@ git checkout -b feature/nueva-coleccion
 
 ---
 
+[![License](https://img.shields.io/badge/License-Educational%20Use-blue?style=flat)](LICENSE)
+
 ## 📄 Licencia
 
-Uso educativo y de práctica.  
-Las APIs listadas pertenecen a sus respectivos autores y se consumen bajo sus condiciones.
+Repositorio compartido principalmente con fines educativos.  
+Para más información sobre permisos, limitaciones y uso, revisa el archivo [LICENSE](LICENSE).
 
 ---
 
@@ -881,10 +883,12 @@ git checkout -b feature/new-collection
 
 ---
 
+[![License](https://img.shields.io/badge/License-Educational%20Use-blue?style=flat)](LICENSE)
+
 ## 📄 License
 
-Educational and practice use only.  
-The listed APIs belong to their respective owners and are consumed under their own terms.
+This repository is shared primarily for educational purposes.  
+For more information about permissions, limitations, and usage, please review the [LICENSE](LICENSE) file.
 
 ---
 
