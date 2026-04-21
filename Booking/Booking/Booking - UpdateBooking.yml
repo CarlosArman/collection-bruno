@@ -1,0 +1,48 @@
+info:
+  name: Booking - UpdateBooking
+  type: http
+  seq: 4
+
+http:
+  method: put
+  url: https://restful-booker.herokuapp.com/booking/2
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: application/json
+    - name: Cookie
+      value: token={{authBooking}}
+  body:
+    type: json
+    data: |-
+      {
+        "firstname": "{{firstName}}",
+        "lastname": "Brown",
+        "totalprice": 111,
+        "depositpaid": true,
+        "bookingdates": {
+          "checkin": "2018-01-01",
+          "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: |-
+        const firstName = bru.interpolate('{{$randomFirstName}}');
+        bru.setVar("firstName",firstName)
+    - type: tests
+      code: |-
+        test("Status code is 200", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

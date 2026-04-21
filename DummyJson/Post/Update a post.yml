@@ -1,0 +1,28 @@
+info:
+  name: Update a post
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{urlBase}}/posts/1"
+  body:
+    type: json
+    data: |
+      {
+          "title": "Blass Academy Editado",
+          "body": "Estudiando Rest Assured con Blass Academy Editado",
+          "tags": ["API", "Rest Assured", "Udemy", "Editado"],
+          "reactions": {
+              "likes": 1448,
+              "dislikes": 39
+          },
+          "userId": 16
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

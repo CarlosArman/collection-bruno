@@ -1,0 +1,28 @@
+opencollection: 1.0.0
+
+info:
+  name: Booking
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+docs:
+  content: |-
+    restful-booker
+    API documentation for the playground API restful-booker
+    https://restful-booker.herokuapp.com/apidoc/index.html
+  type: text/markdown
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

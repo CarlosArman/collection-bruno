@@ -1,0 +1,27 @@
+info:
+  name: Ping - HealthCheck
+  type: http
+  seq: 1
+
+http:
+  method: get
+  url: https://restful-booker.herokuapp.com/ping
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status code is 201", function () {
+          expect(res.getStatus()).to.equal(201);
+        });
+  assertions:
+    - expression: res.body
+      operator: eq
+      value: Created
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

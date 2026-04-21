@@ -1,0 +1,30 @@
+info:
+  name: Sort products
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{urlBase}}/products?sortBy=title&order=asc"
+  params:
+    - name: sortBy
+      value: title
+      type: query
+    - name: order
+      value: asc
+      type: query
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status code is 200", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

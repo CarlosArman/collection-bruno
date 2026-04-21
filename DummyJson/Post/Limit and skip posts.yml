@@ -1,0 +1,25 @@
+info:
+  name: Limit and skip posts
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{urlBase}}/posts?limit=10&skip=10&select=title,reactions,userId"
+  params:
+    - name: limit
+      value: "10"
+      type: query
+    - name: skip
+      value: "10"
+      type: query
+    - name: select
+      value: title,reactions,userId
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

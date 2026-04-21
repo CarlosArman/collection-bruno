@@ -1,0 +1,39 @@
+info:
+  name: Booking - CreateBooking
+  type: http
+  seq: 5
+
+http:
+  method: post
+  url: https://restful-booker.herokuapp.com/booking
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "firstname": "{{$randomFirstName}}",
+        "lastname": "{{$randomLastName}}",
+        "totalprice": 111,
+        "depositpaid": 100,
+        "bookingdates": {
+          "checkin": "{{$isoTimestamp}}",
+          "checkout": "{{$isoTimestamp}}"
+        },
+        "additionalneeds": "Breakfast"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: bru.setVar("bookingId",res.body.bookingid)
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

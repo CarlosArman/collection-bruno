@@ -1,0 +1,15 @@
+info:
+  name: Get all posts by user id
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{urlBase}}/posts/user/5"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,23 @@
+info:
+  name: Partial update a user
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: "{{urlBase}}/users/2"
+  body:
+    type: json
+    data: |
+      {
+          "firstName": "Blass Editado 2",
+          "lastName": "Academy Editado 2",
+          "age": 88
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

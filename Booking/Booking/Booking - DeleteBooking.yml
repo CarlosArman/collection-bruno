@@ -1,0 +1,24 @@
+info:
+  name: Booking - DeleteBooking
+  type: http
+  seq: 6
+
+http:
+  method: delete
+  url: https://restful-booker.herokuapp.com/booking/:id
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Cookie
+      value: token={{authBooking}}
+  params:
+    - name: id
+      value: "{{bookingId}}"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

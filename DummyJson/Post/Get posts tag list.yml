@@ -1,0 +1,15 @@
+info:
+  name: Get posts tag list
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{urlBase}}/posts/tag-list"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

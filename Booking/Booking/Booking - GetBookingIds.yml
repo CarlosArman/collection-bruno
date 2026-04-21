@@ -1,0 +1,23 @@
+info:
+  name: Booking - GetBookingIds
+  type: http
+  seq: 2
+
+http:
+  method: get
+  url: https://restful-booker.herokuapp.com/booking
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status code is 200", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,23 @@
+info:
+  name: Get all products categories
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{urlBase}}/products/categories"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status code is 200", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

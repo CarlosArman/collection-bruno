@@ -1,0 +1,21 @@
+info:
+  name: Update a product
+  type: http
+  seq: 10
+
+http:
+  method: PUT
+  url: "{{urlBase}}/products/1"
+  body:
+    type: json
+    data: |-
+      {
+        "title": "BMW Car"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
